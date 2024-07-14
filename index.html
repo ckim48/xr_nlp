@@ -57,30 +57,26 @@
     .feature-box {
       margin-bottom: 40px;
       background: #fff;
-      border-radius: 8px;
-      padding: 40px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
+      border-radius: 10px;
+      padding: 50px;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    .feature-box2{
-      height:320px;
-      box-shadow: none;
-      border: 3px solid #362091;
 
-    }
     .feature-box:hover {
       transform: translateY(-10px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
     }
 
     .feature-box img {
       width: 45%;
       height: auto;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-bottom: 20px;
     }
 
@@ -135,9 +131,63 @@
     .feature-box-row div {
       flex: 1;
     }
-    h3{
-      color:#362091;
+
+    h3 {
+      color: #362091;
       font-weight: 700;
+    }
+
+    .feature-box2 {
+      height: 100%;
+      box-shadow: none;
+      border: 3px solid #362091;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+            background: linear-gradient(135deg, rgba(54, 32, 145, 0.05), rgba(255, 255, 255, 0.05));
+
+    }
+
+    .feature-box2:hover {
+      background-color: #f0f0f0;
+    }
+
+/*    .feature-box2::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(54, 32, 145, 0.1), rgba(255, 255, 255, 0.1));
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .feature-box2:hover::before {
+      opacity: 1;
+    }
+*/
+    .feature-box2-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-box2-icon {
+      font-size: 50px;
+      color: #362091;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .feature-box img {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .feature-box-row {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -164,13 +214,13 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Project XR - NLP Team</h1>
-      <h2>Advanced natural language processing methods to shed light on conversations and datasets in VR.</h2>
-      <a href="#about" class="btn-get-started">Learn More</a>
-    </div>
-  </section><!-- End Hero Section -->
+<section id="hero">
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+    <h1>Project XR - NLP Team</h1>
+    <h2>Advanced natural language processing methods to shed light on conversations and datasets in VR.</h2>
+    <a href="#about" class="btn-get-started">Learn More</a>
+  </div>
+</section>
 
   <main id="main">
 
@@ -246,52 +296,48 @@
              <div class="row features-row">
           <div class="col-md-4 container-feature" data-aos="fade-up" data-aos-delay="200">
             <div class="feature-box feature-box2">
-              <div class="feature-box-row">
-                <!-- <img src="assets/img/f2.png" alt="Dialogue Summarization"> -->
-                <div>
-                  <h4>Dialogue Summarization</h4>
-                  <ul>
-                    <li>Utilizes the GPT-3.5 model to summarize the input dialogue, providing a concise summary in 5
-                      sentences.</li>
-                    <li>Produces a summary in five sentences, capturing the essence of the dialogue.</li>
-                  </ul>
+              <div class="feature-box2-content">
+                <div class="feature-box2-icon">
+                  <i class="bi bi-file-earmark-text"></i>
                 </div>
+                <h4>Dialogue Summarization</h4>
+                <ul>
+                  <li>Utilizes the GPT-3.5 model to summarize the input dialogue, providing a concise summary in 5 sentences.</li>
+                  <li>Produces a summary in five sentences, capturing the essence of the dialogue.</li>
+                </ul>
               </div>
             </div>
           </div>
           <div class="col-md-4 container-feature" data-aos="fade-up" data-aos-delay="300">
             <div class="feature-box feature-box2">
-              <div class="feature-box-row">
-                <!-- <img src="assets/img/f3.png" alt="Sentiment Analysis"> -->
-                <div>
-                  <h4>Sentiment Analysis</h4>
-                  <ul>
-                    <li>Analyzes the sentiment of the input dialogue, providing three sentiment words and explanations.</li>
-                    <li>Outputs three sentiment words and detailed explanations, helping users understand the emotional
-                      tone.</li>
-                  </ul>
+              <div class="feature-box2-content">
+                <div class="feature-box2-icon">
+                  <i class="bi bi-emoji-smile"></i>
                 </div>
+                <h4>Sentiment Analysis</h4>
+                <ul>
+                  <li>Analyzes the sentiment of the input dialogue, providing three sentiment words and explanations.</li>
+                  <li>Outputs three sentiment words and detailed explanations, helping users understand the emotional tone.</li>
+                </ul>
               </div>
             </div>
           </div>
           <div class="col-md-4 container-feature" data-aos="fade-up" data-aos-delay="400">
             <div class="feature-box feature-box2">
-              <div class="feature-box-row">
-                <!-- <img src="assets/img/f4.png" alt="Keyword Extraction"> -->
-                <div>
-                  <h4>Keyword Extraction</h4>
-                  <ul>
-                    <li>Extracts the top 10 keywords from the dialogue using the KeyBERT model.</li>
-                    <li>Provides keywords along with their relevance scores, highlighting key topics and themes.</li>
-                  </ul>
+              <div class="feature-box2-content">
+                <div class="feature-box2-icon">
+                  <i class="bi bi-key"></i>
                 </div>
+                <h4>Keyword Extraction</h4>
+                <ul>
+                  <li>Extracts the top 10 keywords from the dialogue using the KeyBERT model.</li>
+                  <li>Provides keywords along with their relevance scores, highlighting key topics and themes.</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
         </div>
-
-     
 
         <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
           <div class="feature-box-row">
@@ -307,42 +353,42 @@
              <div class="row features-row">
           <div class="col-md-4 container-feature" data-aos="fade-up" data-aos-delay="200">
             <div class="feature-box feature-box2">
-              <div class="feature-box-row">
-                <!-- <img src="assets/img/f2.png" alt="Dialogue Summarization"> -->
-                <div>
-                  <h4>Data File Upload</h4>
-                  <ul>
-                    <li>Users can upload a CSV data file containing dialogue data.</li>
-                  </ul>
+              <div class="feature-box2-content">
+                <div class="feature-box2-icon">
+                  <i class="bi bi-upload"></i>
                 </div>
+                <h4>Data File Upload</h4>
+                <ul>
+                  <li>Users can upload a CSV data file containing dialogue data.</li>
+                </ul>
               </div>
             </div>
           </div>
           <div class="col-md-4 container-feature" data-aos="fade-up" data-aos-delay="300">
             <div class="feature-box feature-box2">
-              <div class="feature-box-row">
-                <!-- <img src="assets/img/f3.png" alt="Sentiment Analysis"> -->
-                <div>
-                  <h4>Sentiment Analysis</h4>
-                  <ul>
-                    <li>Visualizes emotions extracted from the uploaded data.</li>
-                    <li>Presents the data using various visual formats, such as word clouds, bar charts, and pie charts, making it easier to interpret.</li>
-                  </ul>
+              <div class="feature-box2-content">
+                <div class="feature-box2-icon">
+                  <i class="bi bi-bar-chart"></i>
                 </div>
+                <h4>Sentiment Analysis</h4>
+                <ul>
+                  <li>Visualizes emotions extracted from the uploaded data.</li>
+                  <li>Presents the data using various visual formats, such as word clouds, bar charts, and pie charts, making it easier to interpret.</li>
+                </ul>
               </div>
             </div>
           </div>
           <div class="col-md-4 container-feature" data-aos="fade-up" data-aos-delay="400">
             <div class="feature-box feature-box2">
-              <div class="feature-box-row">
-                <!-- <img src="assets/img/f4.png" alt="Keyword Extraction"> -->
-                <div>
-                  <h4>Keyword Analysis</h4>
-                  <ul>
-                    <li>Visualizes the keywords extracted from the uploaded data.</li>
-                    <li>Uses formats like word clouds, treemaps, and pie charts to display keyword distribution and importance.</li>
-                  </ul>
+              <div class="feature-box2-content">
+                <div class="feature-box2-icon">
+                  <i class="bi bi-key"></i>
                 </div>
+                <h4>Keyword Analysis</h4>
+                <ul>
+                  <li>Visualizes the keywords extracted from the uploaded data.</li>
+                  <li>Uses formats like word clouds, treemaps, and pie charts to display keyword distribution and importance.</li>
+                </ul>
               </div>
             </div>
           </div>
